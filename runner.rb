@@ -25,7 +25,7 @@ tx = DATA.read.sub("@FIB_CODE", bin_to_hex(script_binary))
        .sub("@FIB_ARG", ARGV[1])
 
 File.write("tx.json", tx)
-commandline = "ckb-standalone-debugger/bins/target/release/ckb-debugger --tx-file tx.json --script-group-type type -i 0 -e input"
+commandline = "/opt/debugger/ckb-debugger --tx-file tx.json --script-group-type type -i 0 -e input"
 STDERR.puts "Executing: #{commandline}"
 exec(commandline)
 
